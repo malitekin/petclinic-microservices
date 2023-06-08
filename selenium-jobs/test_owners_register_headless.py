@@ -8,10 +8,8 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("headless")
 chrome_options.add_argument("no-sandbox")
 chrome_options.add_argument("disable-dev-shm-usage")
-
 # Update webdriver instance of chrome-driver with adding chrome options
 driver = webdriver.Chrome(options=chrome_options)
-
 # Connect to the application
 APP_IP = os.environ['MASTER_PUBLIC_IP']
 url = "http://"+APP_IP.strip()+":30001/"
@@ -41,7 +39,6 @@ fn_field = driver.find_element_by_name('telephone')
 fn_field.send_keys('+1230576803')
 sleep(1)
 fn_field.send_keys(Keys.ENTER)
-
 # Wait 10 seconds to get updated Owner List
 sleep(10)
 # Verify that new user is added to Owner List
